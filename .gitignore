@@ -1,0 +1,4 @@
+.env
+private_media/
+firebase-service-account*.json
+__pycache__/

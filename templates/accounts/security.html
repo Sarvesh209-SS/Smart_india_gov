@@ -1,0 +1,39 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% translate "Security" %}</title>
+    <style>
+        :root { font-family:Georgia,'Times New Roman',serif; color:#193632; background:#f1f5ef; }
+        * { box-sizing:border-box; }
+        body { margin:0; }
+        header { display:flex; justify-content:space-between; padding:18px max(20px,calc((100vw - 900px)/2)); background:#173c3b; color:#f6f4e9; }
+        header a { color:inherit; }
+        main { width:min(900px,calc(100% - 32px)); margin:38px auto; }
+        .language-selector { display:flex; justify-content:flex-end; }
+        select { padding:7px; font:inherit; }
+        dl { margin:24px 0; border-top:1px solid #bacbc0; }
+        .row { display:flex; justify-content:space-between; gap:16px; padding:15px 4px; border-bottom:1px solid #d1dcd4; }
+        dt { color:#5b6b67; } dd { margin:0; font-weight:700; }
+        button { padding:11px 15px; background:#a22d24; color:white; border:0; font:inherit; cursor:pointer; }
+        @media(max-width:540px) { header { padding:16px; } .row { align-items:start; flex-direction:column; gap:5px; } }
+    </style>
+</head>
+<body>
+<header><strong>Smart India Gov</strong><a href="{% url 'dashboard' %}">{% translate "Dashboard" %}</a></header>
+<main>
+    {% include "includes/language_selector.html" %}
+    <h1>{% translate "Security" %}</h1>
+    <dl>
+        <div class="row"><dt>{% translate "Mobile number" %}</dt><dd>{{ masked_mobile|default:_('Not added') }}</dd></div>
+        <div class="row"><dt>{% translate "Email verification" %}</dt><dd>{% if email_verified %}✓ {% translate "Verified" %}{% else %}{% translate "Not verified" %}{% endif %}</dd></div>
+        <div class="row"><dt>{% translate "Documents secured" %}</dt><dd>✓ {% translate "Private storage enabled" %}</dd></div>
+        <div class="row"><dt>{% translate "Last login" %}</dt><dd>{% if request.user.last_login %}{{ request.user.last_login|date:'M j, Y, P' }}{% else %}{% translate "Not available" %}{% endif %}</dd></div>
+        <div class="row"><dt>{% translate "Active sessions" %}</dt><dd>{{ active_sessions }}</dd></div>
+    </dl>
+    {% if messages %}{% for message in messages %}<p role="status">{{ message }}</p>{% endfor %}{% endif %}
+    <form method="post" action="{% url 'logout-all' %}" onsubmit="return confirm('{% translate 'Sign out from every device?' %}')">{% csrf_token %}<button type="submit">{% translate "Sign out from all devices" %}</button></form>
+</main>
+</body>
+</html>

@@ -1,0 +1,632 @@
+#
+msgid ""
+msgstr ""
+"Language: ta\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Language"
+msgstr "மொழி"
+
+msgid "Create account"
+msgstr "கணக்கை உருவாக்கு"
+
+msgid "Create your account"
+msgstr "உங்கள் கணக்கை உருவாக்குங்கள்"
+
+msgid "Student document account"
+msgstr "மாணவர் ஆவணக் கணக்கு"
+
+msgid "Email"
+msgstr "மின்னஞ்சல்"
+
+msgid "Indian mobile number"
+msgstr "இந்திய கைபேசி எண்"
+
+msgid "Password"
+msgstr "கடவுச்சொல்"
+
+msgid "Already have an account?"
+msgstr "ஏற்கனவே கணக்கு உள்ளதா?"
+
+msgid "Login"
+msgstr "உள்நுழை"
+
+msgid "Secure sign in"
+msgstr "பாதுகாப்பான உள்நுழைவு"
+
+msgid "Sign in"
+msgstr "உள்நுழை"
+
+msgid "Use email and password"
+msgstr "மின்னஞ்சல் மற்றும் கடவுச்சொல்லைப் பயன்படுத்து"
+
+msgid "Verify mobile number"
+msgstr "கைபேசி எண்ணைச் சரிபார்"
+
+msgid "Secure account verification"
+msgstr "பாதுகாப்பான கணக்குச் சரிபார்ப்பு"
+
+msgid "Verify your mobile"
+msgstr "உங்கள் கைபேசியைச் சரிபார்க்கவும்"
+
+msgid "The 6-digit code expires in"
+msgstr "6 இலக்கக் குறியீடு காலாவதியாகும் நேரம்"
+
+msgid "seconds"
+msgstr "விநாடிகள்"
+
+msgid "Verify code"
+msgstr "குறியீட்டைச் சரிபார்"
+
+msgid "Return to login"
+msgstr "உள்நுழைவுக்குத் திரும்பு"
+
+msgid "Document upload"
+msgstr "ஆவணப் பதிவேற்றம்"
+
+msgid "Document category"
+msgstr "ஆவண வகை"
+
+msgid "Drop a document here or choose a file"
+msgstr "ஆவணத்தை இங்கே விடவும் அல்லது கோப்பைத் தேர்ந்தெடுக்கவும்"
+
+msgid "Upload document"
+msgstr "ஆவணத்தைப் பதிவேற்று"
+
+msgid "Remove selected file"
+msgstr "தேர்ந்தெடுத்த கோப்பை நீக்கு"
+
+msgid "Uploaded documents"
+msgstr "பதிவேற்றிய ஆவணங்கள்"
+
+msgid "No documents uploaded yet."
+msgstr "இதுவரை ஆவணங்கள் பதிவேற்றப்படவில்லை."
+
+msgid "View"
+msgstr "பார்"
+
+msgid "Download"
+msgstr "பதிவிறக்கு"
+
+msgid "Replace"
+msgstr "மாற்று"
+
+msgid "Delete"
+msgstr "நீக்கு"
+
+msgid "Pending Verification"
+msgstr "சரிபார்ப்பு நிலுவையில்"
+
+msgid "Verified"
+msgstr "சரிபார்க்கப்பட்டது"
+
+msgid "Uploaded by user"
+msgstr "பயனரால் பதிவேற்றப்பட்டது"
+
+msgid "Verified by admin"
+msgstr "நிர்வாகியால் சரிபார்க்கப்பட்டது"
+
+msgid "Verified through authorized API"
+msgstr "அங்கீகரிக்கப்பட்ட API மூலம் சரிபார்க்கப்பட்டது"
+
+msgid "Rejected"
+msgstr "நிராகரிக்கப்பட்டது"
+
+msgid "Rejected because: %(reason)s"
+msgstr "நிராகரிக்கப்பட்ட காரணம்: %(reason)s"
+
+msgid "Verification queue"
+msgstr "சரிபார்ப்புப் பட்டியல்"
+
+msgid "Student document review"
+msgstr "மாணவர் ஆவண ஆய்வு"
+
+msgid "My portfolio"
+msgstr "எனது ஆவணத் தொகுப்பு"
+
+msgid "My Documents"
+msgstr "எனது ஆவணங்கள்"
+
+msgid "Document portfolio"
+msgstr "ஆவணத் தொகுப்பு"
+
+msgid "Aadhaar card"
+msgstr "ஆதார் அட்டை"
+
+msgid "PAN card"
+msgstr "பான் அட்டை"
+
+msgid "Community certificate"
+msgstr "சமூகச் சான்றிதழ்"
+
+msgid "Income certificate"
+msgstr "வருமானச் சான்றிதழ்"
+
+msgid "Nativity certificate"
+msgstr "வசிப்பிடச் சான்றிதழ்"
+
+msgid "Birth certificate"
+msgstr "பிறப்புச் சான்றிதழ்"
+
+msgid "Bank passbook"
+msgstr "வங்கிக் கணக்குப் புத்தகம்"
+
+msgid "10th certificate"
+msgstr "10ஆம் வகுப்புச் சான்றிதழ்"
+
+msgid "12th certificate"
+msgstr "12ஆம் வகுப்புச் சான்றிதழ்"
+
+msgid "Graduation certificate"
+msgstr "பட்டப்படிப்புச் சான்றிதழ்"
+
+msgid "Other"
+msgstr "மற்றவை"
+
+msgid "Profile"
+msgstr "சுயவிவரம்"
+
+msgid "Security"
+msgstr "பாதுகாப்பு"
+
+msgid "Settings"
+msgstr "அமைப்புகள்"
+
+msgid "Dashboard"
+msgstr "முகப்புப் பலகை"
+
+msgid "Upload documents"
+msgstr "ஆவணங்களைப் பதிவேற்று"
+
+msgid "Logout"
+msgstr "வெளியேறு"
+
+msgid "Save profile"
+msgstr "சுயவிவரத்தைச் சேமி"
+
+msgid "Name"
+msgstr "பெயர்"
+
+msgid "State"
+msgstr "மாநிலம்"
+
+msgid "District"
+msgstr "மாவட்டம்"
+
+msgid "Education level"
+msgstr "கல்வி நிலை"
+
+msgid "Institution"
+msgstr "கல்வி நிறுவனம்"
+
+msgid "Mobile number verification"
+msgstr "கைபேசி எண் சரிபார்ப்பு"
+
+msgid "Email verification"
+msgstr "மின்னஞ்சல் சரிபார்ப்பு"
+
+msgid "Not verified"
+msgstr "சரிபார்க்கப்படவில்லை"
+
+msgid "Private storage enabled"
+msgstr "தனிப்பட்ட சேமிப்பு இயக்கத்தில் உள்ளது"
+
+msgid "Last login"
+msgstr "கடைசி உள்நுழைவு"
+
+msgid "Active sessions"
+msgstr "செயலில் உள்ள அமர்வுகள்"
+
+msgid "Not available"
+msgstr "கிடைக்கவில்லை"
+
+msgid "Sign out from all devices"
+msgstr "அனைத்து சாதனங்களிலிருந்தும் வெளியேறு"
+
+msgid "Sign out from every device?"
+msgstr "அனைத்து சாதனங்களிலிருந்தும் வெளியேற வேண்டுமா?"
+
+msgid "Eligible to apply"
+msgstr "விண்ணப்பிக்கத் தகுதி உள்ளது"
+
+msgid "Not eligible"
+msgstr "தகுதி இல்லை"
+
+msgid "More information required"
+msgstr "மேலும் தகவல் தேவை"
+
+msgid "Under review"
+msgstr "ஆய்வில் உள்ளது"
+
+msgid "Approved"
+msgstr "அங்கீகரிக்கப்பட்டது"
+
+msgid "You have already applied for this scholarship."
+msgstr "இந்த உதவித்தொகைக்கு ஏற்கனவே விண்ணப்பித்துள்ளீர்கள்."
+
+msgid "Your scholarship application has been submitted."
+msgstr "உங்கள் உதவித்தொகை விண்ணப்பம் சமர்ப்பிக்கப்பட்டது."
+
+msgid "Choose a file to upload."
+msgstr "பதிவேற்ற ஒரு கோப்பைத் தேர்ந்தெடுக்கவும்."
+
+msgid "Document uploaded successfully."
+msgstr "ஆவணம் வெற்றிகரமாகப் பதிவேற்றப்பட்டது."
+
+msgid "Choose a valid document type."
+msgstr "சரியான ஆவண வகையைத் தேர்ந்தெடுக்கவும்."
+
+msgid "Secure document storage is not configured. Contact support."
+msgstr ""
+"பாதுகாப்பான ஆவணச் சேமிப்பு அமைக்கப்படவில்லை. உதவியைத் தொடர்புகொள்ளவும்."
+
+msgid "Upload failed. Check your connection and try again."
+msgstr ""
+"பதிவேற்றம் தோல்வியடைந்தது. இணைப்பைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்."
+
+msgid "Upload failed unexpectedly. Please try again."
+msgstr "எதிர்பாராத பதிவேற்றப் பிழை. மீண்டும் முயற்சிக்கவும்."
+
+msgid "Could not delete the document. Please try again."
+msgstr "ஆவணத்தை நீக்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்."
+
+msgid "File is too large. The maximum size is 5 MB."
+msgstr "கோப்பு மிகப் பெரியது. அதிகபட்ச அளவு 5 MB."
+
+msgid "The selected file is empty."
+msgstr "தேர்ந்தெடுத்த கோப்பு காலியாக உள்ளது."
+
+msgid "Unsupported file type. Upload PDF, DOC, DOCX, TXT, JPG, JPEG, or PNG."
+msgstr ""
+"ஆதரிக்கப்படாத கோப்பு வகை. PDF, DOC, DOCX, TXT, JPG, JPEG அல்லது PNG "
+"பதிவேற்றவும்."
+
+msgid "The file contents do not match the selected file type."
+msgstr "கோப்பின் உள்ளடக்கம் தேர்ந்தெடுத்த கோப்பு வகையுடன் பொருந்தவில்லை."
+
+msgid "Document completion"
+msgstr "ஆவண நிறைவு"
+
+msgid "Verified document completion"
+msgstr "சரிபார்க்கப்பட்ட ஆவண நிறைவு"
+
+msgid "Mobile"
+msgstr "கைபேசி"
+
+msgid "Account created"
+msgstr "கணக்கு உருவாக்கப்பட்ட தேதி"
+
+msgid "Scholarship and document support portal"
+msgstr "உதவித்தொகை மற்றும் ஆவண ஆதரவு தளம்"
+
+msgid ""
+"A secure place to organize student documents and discover scholarship "
+"opportunities."
+msgstr ""
+"மாணவர் ஆவணங்களை ஒழுங்குபடுத்தவும் உதவித்தொகை வாய்ப்புகளைக் கண்டறியவும் "
+"பாதுகாப்பான இடம்."
+
+msgid "Your documents stay private and are reviewed by authorized staff."
+msgstr ""
+"உங்கள் ஆவணங்கள் தனிப்பட்டதாக இருக்கும்; அங்கீகரிக்கப்பட்ட பணியாளர்கள் "
+"மட்டுமே அவற்றை ஆய்வு செய்வார்கள்."
+
+msgid "General document"
+msgstr "பொது ஆவணம்"
+
+msgid "PDF, DOC, DOCX, TXT, JPG, JPEG, or PNG. Maximum 5 MB per file."
+msgstr ""
+"PDF, DOC, DOCX, TXT, JPG, JPEG அல்லது PNG. ஒவ்வொரு கோப்பும் அதிகபட்சம் 5 MB."
+
+msgid "Document pages"
+msgstr "ஆவணப் பக்கங்கள்"
+
+msgid "Uploading document…"
+msgstr "ஆவணம் பதிவேற்றப்படுகிறது…"
+
+msgid "Upload complete."
+msgstr "பதிவேற்றம் முடிந்தது."
+
+msgid "Unsupported file type. Choose PDF, DOC, DOCX, TXT, JPG, JPEG, or PNG."
+msgstr ""
+"ஆதரிக்கப்படாத கோப்பு வகை. PDF, DOC, DOCX, TXT, JPG, JPEG அல்லது PNG-ஐத் "
+"தேர்ந்தெடுக்கவும்."
+
+msgid "File too large. Maximum size is %(size)s."
+msgstr "கோப்பு மிகப் பெரியது. அதிகபட்ச அளவு %(size)s."
+
+msgid "Upload failed. Please try again."
+msgstr "பதிவேற்றம் தோல்வியடைந்தது. மீண்டும் முயற்சிக்கவும்."
+
+msgid "Network error. Check your connection and retry."
+msgstr "பிணையப் பிழை. இணைப்பைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்."
+
+msgid "Delete this document? This cannot be undone."
+msgstr "இந்த ஆவணத்தை நீக்கவா? இதை மீட்டெடுக்க முடியாது."
+
+msgid "Delete failed. Please try again."
+msgstr "நீக்கம் தோல்வியடைந்தது. மீண்டும் முயற்சிக்கவும்."
+
+msgid "Network error while deleting. Retry."
+msgstr "நீக்கும் போது பிணையப் பிழை ஏற்பட்டது. மீண்டும் முயற்சிக்கவும்."
+
+msgid "Document deleted."
+msgstr "ஆவணம் நீக்கப்பட்டது."
+
+msgid "Complete your profile"
+msgstr "உங்கள் சுயவிவரத்தை நிறைவு செய்யுங்கள்"
+
+msgid "Preferred language"
+msgstr "விருப்ப மொழி"
+
+msgid "Full name"
+msgstr "முழுப் பெயர்"
+
+msgid "Date of birth"
+msgstr "பிறந்த தேதி"
+
+msgid "Course"
+msgstr "பாடநெறி"
+
+msgid "Category"
+msgstr "பிரிவு"
+
+msgid "Annual family income"
+msgstr "ஆண்டு குடும்ப வருமானம்"
+
+msgid "First generation graduate"
+msgstr "முதல் தலைமுறை பட்டதாரி"
+
+msgid "Welcome"
+msgstr "வரவேற்கிறோம்"
+
+msgid "Complete your profile to improve scholarship matching."
+msgstr ""
+"உதவித்தொகைப் பொருத்தத்தை மேம்படுத்த உங்கள் சுயவிவரத்தை நிறைவு செய்யுங்கள்."
+
+msgid "Edit profile"
+msgstr "சுயவிவரத்தைத் திருத்து"
+
+msgid "Profile snapshot"
+msgstr "சுயவிவரச் சுருக்கம்"
+
+msgid "Not added yet"
+msgstr "இன்னும் சேர்க்கப்படவில்லை"
+
+msgid "Available scholarships"
+msgstr "கிடைக்கும் உதவித்தொகைகள்"
+
+msgid "Demo listing"
+msgstr "மாதிரிப் பதிவு"
+
+msgid "Closes"
+msgstr "முடிவுத் தேதி"
+
+msgid "No description provided yet."
+msgstr "விளக்கம் இன்னும் வழங்கப்படவில்லை."
+
+msgid "Check eligibility"
+msgstr "தகுதியைச் சரிபார்"
+
+msgid "No open scholarships are available at the moment."
+msgstr "தற்போது திறந்திருக்கும் உதவித்தொகைகள் இல்லை."
+
+msgid "Your applications"
+msgstr "உங்கள் விண்ணப்பங்கள்"
+
+msgid "Submitted"
+msgstr "சமர்ப்பிக்கப்பட்டது"
+
+msgid "You have not submitted an application yet."
+msgstr "நீங்கள் இன்னும் விண்ணப்பம் சமர்ப்பிக்கவில்லை."
+
+msgid "Date of birth cannot be in the future"
+msgstr "பிறந்த தேதி எதிர்காலத்தில் இருக்க முடியாது"
+
+msgid "Age requirement"
+msgstr "வயது நிபந்தனை"
+
+msgid "Age %(age)s is below the minimum age of %(limit)s"
+msgstr "வயது %(age)s; குறைந்தபட்ச வயது %(limit)s"
+
+msgid "Age %(age)s is above the maximum age of %(limit)s"
+msgstr "வயது %(age)s; அதிகபட்ச வயது %(limit)s"
+
+msgid "Income exceeds limit of %(limit)s"
+msgstr "வருமானம் %(limit)s என்ற வரம்பை மீறுகிறது"
+
+msgid "Income limit"
+msgstr "வருமான வரம்பு"
+
+msgid "First-generation status"
+msgstr "முதல் தலைமுறை நிலை"
+
+msgid "First-generation graduate required"
+msgstr "முதல் தலைமுறை பட்டதாரி அவசியம்"
+
+msgid "Verified document: %(name)s"
+msgstr "சரிபார்க்கப்பட்ட ஆவணம்: %(name)s"
+
+msgid "%(name)s document must be verified (current status: %(status)s)"
+msgstr "%(name)s ஆவணம் சரிபார்க்கப்பட வேண்டும் (தற்போதைய நிலை: %(status)s)"
+
+msgid "Document: %(name)s"
+msgstr "ஆவணம்: %(name)s"
+
+msgid "%(label)s '%(value)s' is not in the listed criteria"
+msgstr "%(label)s '%(value)s' பட்டியலிடப்பட்ட தகுதிகளில் இல்லை"
+
+msgid "No document added"
+msgstr "ஆவணம் சேர்க்கப்படவில்லை"
+
+msgid "Private portfolio"
+msgstr "தனிப்பட்ட ஆவணத் தொகுப்பு"
+
+msgid "Document collection"
+msgstr "ஆவணத் தொகுப்பு"
+
+msgid "documents stored"
+msgstr "சேமிக்கப்பட்ட ஆவணங்கள்"
+
+msgid "Not added"
+msgstr "சேர்க்கப்படவில்லை"
+
+msgid "Add a document"
+msgstr "ஆவணத்தைச் சேர்"
+
+msgid "Update profile"
+msgstr "சுயவிவரத்தைப் புதுப்பி"
+
+msgid "Back to dashboard"
+msgstr "முகப்புப் பலகைக்குத் திரும்பு"
+
+msgid "Applications for this scholarship are not open yet."
+msgstr "இந்த உதவித்தொகைக்கான விண்ணப்பங்கள் இன்னும் திறக்கப்படவில்லை."
+
+msgid "The application deadline has passed."
+msgstr "விண்ணப்பக் காலக்கெடு முடிந்துவிட்டது."
+
+msgid "Complete the eligibility requirements before applying."
+msgstr "விண்ணப்பிக்கும் முன் தகுதித் தேவைகளை நிறைவு செய்யுங்கள்."
+
+msgid "This scholarship does not have eligibility criteria yet."
+msgstr "இந்த உதவித்தொகைக்கான தகுதி விதிகள் இன்னும் அமைக்கப்படவில்லை."
+
+msgid "Requirements met"
+msgstr "நிறைவேற்றிய தேவைகள்"
+
+msgid "Information or documents needed"
+msgstr "தேவையான தகவல் அல்லது ஆவணங்கள்"
+
+msgid "Criteria not met"
+msgstr "தகுதி நிபந்தனைகள் நிறைவேறவில்லை"
+
+msgid "Application"
+msgstr "விண்ணப்பம்"
+
+msgid "Submit application"
+msgstr "விண்ணப்பத்தைச் சமர்ப்பி"
+
+msgid "Note for the reviewer (optional)"
+msgstr "ஆய்வாளருக்கான குறிப்பு (விருப்பம்)"
+
+msgid "Official scholarship information"
+msgstr "உதவித்தொகையின் அதிகாரப்பூர்வ தகவல்"
+
+msgid "User-uploaded files are not official DigiLocker documents."
+msgstr "பயனர் பதிவேற்றிய கோப்புகள் அதிகாரப்பூர்வ DigiLocker ஆவணங்கள் அல்ல."
+
+msgid "Verify"
+msgstr "சரிபார்"
+
+msgid "Reject"
+msgstr "நிராகரி"
+
+msgid "Rejection reason"
+msgstr "நிராகரிப்பு காரணம்"
+
+msgid "No documents are waiting for review."
+msgstr "ஆய்வுக்காக ஆவணங்கள் எதுவும் காத்திருக்கவில்லை."
+
+msgid ""
+"Set both FIREBASE_STORAGE_BUCKET and FIREBASE_SERVICE_ACCOUNT_KEY, or leave "
+"both empty."
+msgstr ""
+"FIREBASE_STORAGE_BUCKET மற்றும் FIREBASE_SERVICE_ACCOUNT_KEY இரண்டையும் "
+"அமைக்கவும் அல்லது இரண்டையும் காலியாக விடவும்."
+
+msgid "Enter a valid 10-digit Indian mobile number."
+msgstr "சரியான 10 இலக்க இந்திய கைபேசி எண்ணை உள்ளிடவும்."
+
+msgid "Too many verification requests. Wait before trying again."
+msgstr ""
+"சரிபார்ப்பு கோரிக்கைகள் அதிகம். மீண்டும் முயற்சிக்கும் முன் காத்திருக்கவும்."
+
+msgid "Please wait before requesting another code."
+msgstr "மற்றொரு குறியீட்டைக் கோருவதற்கு முன் காத்திருக்கவும்."
+
+msgid "This code has expired. Resend a new code to continue."
+msgstr ""
+"இந்தக் குறியீடு காலாவதியானது. தொடர புதிய குறியீட்டை மீண்டும் அனுப்பவும்."
+
+msgid "Too many incorrect codes. Try again after the temporary lockout."
+msgstr ""
+"தவறான குறியீடுகள் அதிகம். தற்காலிக முடக்கத்திற்குப் பிறகு முயற்சிக்கவும்."
+
+msgid "That code is incorrect. Check it and try again."
+msgstr "குறியீடு தவறானது. சரிபார்த்து மீண்டும் முயற்சிக்கவும்."
+
+msgid "Step 1: Mobile number"
+msgstr "படி 1: கைபேசி எண்"
+
+msgid "Step 3: Verified"
+msgstr "படி 3: சரிபார்க்கப்பட்டது"
+
+msgid "Change Mobile Number"
+msgstr "கைபேசி எண்ணை மாற்று"
+
+msgid "Enter a different mobile number."
+msgstr "வேறு கைபேசி எண்ணை உள்ளிடவும்."
+
+msgid "Change mobile number"
+msgstr "கைபேசி எண்ணை மாற்று"
+
+msgid "Mobile Number Verified"
+msgstr "கைபேசி எண் சரிபார்க்கப்பட்டது"
+
+msgid "Your phone has been verified. Your account is ready."
+msgstr "உங்கள் கைபேசி சரிபார்க்கப்பட்டது. உங்கள் கணக்கு தயாராக உள்ளது."
+
+msgid "Continue to dashboard"
+msgstr "முகப்புப் பலகைக்குச் செல்"
+
+msgid "Admin"
+msgstr "நிர்வாகி"
+
+msgid "Uploaded"
+msgstr "பதிவேற்றப்பட்டது"
+
+msgid "Document verification"
+msgstr "ஆவணச் சரிபார்ப்பு"
+
+msgid "Review uploaded records and verify only what you can substantiate."
+msgstr ""
+"பதிவேற்றிய ஆவணங்களை ஆய்வு செய்து உறுதிப்படுத்தக்கூடியவற்றை மட்டும் "
+"சரிபார்க்கவும்."
+
+msgid "Documents grouped by certificate type"
+msgstr "சான்றிதழ் வகைப்படி ஒழுங்குபடுத்தப்பட்ட ஆவணங்கள்"
+
+msgid "Your certificates and identity documents, organized in one place."
+msgstr ""
+"உங்கள் சான்றிதழ்களும் அடையாள ஆவணங்களும் ஒரே இடத்தில் "
+"ஒழுங்குபடுத்தப்பட்டுள்ளன."
+
+msgid "Profile details"
+msgstr "சுயவிவர விவரங்கள்"
+
+msgid "Deadline"
+msgstr "காலக்கெடு"
+
+msgid "No closing date listed"
+msgstr "முடிவு தேதி குறிப்பிடப்படவில்லை"
+
+msgid "Eligibility check"
+msgstr "தகுதிச் சரிபார்ப்பு"
+
+msgid "Eligibility rules have not been configured for this scholarship."
+msgstr "இந்த உதவித்தொகைக்கான தகுதி விதிகள் அமைக்கப்படவில்லை."
+
+msgid "Your application is"
+msgstr "உங்கள் விண்ணப்பம்"
+
+msgid "Attached documents: your currently uploaded files."
+msgstr "இணைக்கப்பட்ட ஆவணங்கள்: நீங்கள் தற்போது பதிவேற்றிய கோப்புகள்."
+
+msgid "Manage documents"
+msgstr "ஆவணங்களை நிர்வகி"
+
+msgid "Resolve the eligibility items before submitting an application."
+msgstr "விண்ணப்பத்தைச் சமர்ப்பிக்கும் முன் தகுதி நிலுவைகளைத் தீர்க்கவும்."

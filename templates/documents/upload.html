@@ -1,0 +1,296 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% translate "My Documents" %}</title>
+    <style>
+        :root { color-scheme: light; font-family: Georgia, 'Times New Roman', serif; color: #172d32; background: #f1f5ef; }
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        header { background: #173c3b; color: #f6f4e9; padding: 18px max(24px, calc((100vw - 1000px)/2)); display: flex; justify-content: space-between; }
+        header a { color: inherit; }
+        main { width: min(1000px, calc(100% - 32px)); margin: 40px auto; }
+        h1 { font-size: 2rem; margin: 0 0 8px; }
+        h2 { margin-top: 36px; }
+        p { line-height: 1.55; }
+        .muted { color: #5b6b69; }
+        .upload-form { margin: 24px 0 36px; padding: 22px 0; border-block: 1px solid #cbd7cf; display: grid; gap: 14px; max-width: 680px; }
+        label { display: grid; gap: 7px; font-weight: 700; }
+        select { font: inherit; padding: 11px; border: 1px solid #a9b9b0; background: white; }
+        .drop-zone { display: grid; justify-items: center; gap: 8px; padding: 28px 16px; border: 2px dashed #718e83; background: #f9fbf7; cursor: pointer; text-align: center; transition: background .2s ease, border-color .2s ease, transform .2s ease; }
+        .drop-zone.dragging { border-color: #c8512f; background: #fff4ef; transform: scale(1.01); }
+        .drop-zone input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+        .drop-zone:focus-within { outline: 3px solid #c8512f; outline-offset: 3px; }
+        .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+        button, .button { border: 0; padding: 10px 15px; background: #c8512f; color: white; font: inherit; cursor: pointer; text-decoration: none; }
+        button.secondary { background: #dce5de; color: #172d32; }
+        button:disabled { opacity: .55; cursor: wait; }
+        .selected { display: grid; gap: 4px; padding: 12px; background: #e4ede6; overflow-wrap: anywhere; }
+        progress { width: 100%; height: 12px; accent-color: #c8512f; }
+        .feedback { min-height: 1.5em; }
+        .feedback.error { color: #a22d24; }
+        .feedback.success { color: #176544; }
+        .document-list { display: grid; }
+        .document { display: grid; grid-template-columns: minmax(160px, 2fr) minmax(100px, 1fr) minmax(80px, .7fr) minmax(115px, 1fr) auto; gap: 14px; align-items: center; padding: 14px 8px; border-bottom: 1px solid #d1dcd4; animation: arrive .35s ease both; }
+        .file-name { font-weight: 700; overflow-wrap: anywhere; }
+        .file-meta { color: #5b6b69; font-size: .92rem; }
+        .row-actions { display: flex; gap: 8px; }
+        .row-actions a { color: #173c3b; }
+        .row-actions form { margin: 0; }
+        .row-actions button { background: transparent; color: #a22d24; padding: 6px; text-decoration: underline; }
+        .messages { padding: 0; list-style: none; }
+        .messages li { margin: 8px 0; }
+        .top-links { display: flex; gap: 16px; margin: 18px 0; }
+        .top-links a { color: #173c3b; }
+        @keyframes arrive { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+        @media (max-width: 680px) {
+            header { padding: 16px; }
+            main { margin: 26px auto; }
+            .document { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; padding: 16px 4px; }
+            .document > :nth-child(2), .document > :nth-child(3), .document > :nth-child(4) { grid-column: 1; }
+            .row-actions { grid-column: 2; grid-row: 1 / span 4; flex-direction: column; align-items: end; }
+        }
+    </style>
+</head>
+<body>
+<header><strong>Smart India Gov</strong><nav>{% include "includes/language_selector.html" %} <a href="{% url 'document-portfolio' %}">{% translate "My portfolio" %}</a> <a href="{% url 'dashboard' %}">{% translate "Dashboard" %}</a></nav></header>
+<main>
+    <h1>{% translate "My Documents" %}</h1>
+    <p class="muted">{% translate "PDF, DOC, DOCX, TXT, JPG, JPEG, or PNG. Maximum 5 MB per file." %}</p>
+    <nav class="top-links" aria-label="{% translate 'Document pages' %}"><a href="{% url 'document-upload' %}">{% translate "Upload documents" %}</a><a href="{% url 'document-portfolio' %}">{% translate "My portfolio" %}</a></nav>
+    {% if messages %}<ul class="messages" aria-live="polite">{% for message in messages %}<li>{{ message }}</li>{% endfor %}</ul>{% endif %}
+    {{ upload_translations|json_script:"upload-translations" }}
+
+    <form id="upload-form" class="upload-form" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>{% translate "Document category" %}
+            <select name="doc_type"><option value="">{% translate "General document" %}</option>{% for kind in document_types %}<option value="{{ kind.pk }}">{{ kind.display_name }}</option>{% endfor %}</select>
+        </label>
+        <label id="drop-zone" class="drop-zone" for="file-input" tabindex="0">
+            <strong>{% translate "Drop a document here or choose a file" %}</strong>
+            <span class="muted">PDF, DOC, DOCX, TXT, JPG, JPEG, PNG</span>
+            <input id="file-input" type="file" name="file" accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain,image/jpeg,image/png" required>
+        </label>
+        <div id="selected-file" class="selected" hidden>
+            <strong id="file-name"></strong>
+            <span id="file-details" class="file-meta"></span>
+        </div>
+        <progress id="upload-progress" value="0" max="100" aria-label="Upload progress" hidden></progress>
+        <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+        <div class="actions">
+            <button id="upload-button" type="submit" disabled>{% translate "Upload document" %}</button>
+            <button id="remove-button" class="secondary" type="button" hidden>{% translate "Remove selected file" %}</button>
+        </div>
+    </form>
+
+    <h2>{% translate "Uploaded documents" %}</h2>
+    <div id="document-list" class="document-list" data-delete-template="{% url 'document-delete' 0 %}">
+        {% for document in documents %}
+        <article class="document" data-document-id="{{ document.pk }}">
+            <span class="file-name">{{ document.doc_type.display_name }}</span>
+            <span class="file-meta">{{ document.original_filename|default:document.file.name }}</span>
+            <span class="file-meta">{{ document.file_type|default:document.doc_type.display_name }}</span>
+            <span class="file-meta">{{ document.file_size|filesizeformat }}</span>
+            <span class="file-meta">{{ document.uploaded_at|date:'M j, Y, P' }}</span>
+            <span class="file-meta">{{ document.get_status_display }}</span>
+            <span class="file-meta">{{ document.get_verification_source_display }}</span>
+            {% if document.status == 'REJECTED' %}<span class="file-meta">{% blocktranslate with reason=document.rejection_reason %}Rejected because: {{ reason }}{% endblocktranslate %}</span>{% endif %}
+            <span class="row-actions">
+                <a href="{% url 'doc-download' document.pk %}?view=1" target="_blank" rel="noopener">{% translate "View" %}</a>
+                <a href="{% url 'doc-download' document.pk %}">{% translate "Download" %}</a>
+                {% if document.status == 'REJECTED' or document.status == 'REUPLOAD' %}<button type="button" class="replace-button" data-document-id="{{ document.pk }}">{% translate "Replace" %}</button>{% endif %}
+                <form method="post" action="{% url 'document-delete' document.pk %}" class="delete-form">
+                    {% csrf_token %}<button type="submit">{% translate "Delete" %}</button>
+                </form>
+            </span>
+        </article>
+        {% empty %}<p id="empty-list" class="muted">{% translate "No documents uploaded yet." %}</p>{% endfor %}
+    </div>
+</main>
+<script>
+(() => {
+    const maxBytes = Number("{{ max_upload_bytes }}");
+    const allowedExtensions = new Set(["pdf", "doc", "docx", "txt", "jpg", "jpeg", "png"]);
+    const form = document.getElementById("upload-form");
+    const input = document.getElementById("file-input");
+    const dropZone = document.getElementById("drop-zone");
+    const selected = document.getElementById("selected-file");
+    const progress = document.getElementById("upload-progress");
+    const uploadButton = document.getElementById("upload-button");
+    const removeButton = document.getElementById("remove-button");
+    const feedback = document.getElementById("feedback");
+    const copy = JSON.parse(document.getElementById("upload-translations").textContent);
+    const replacementInput = document.createElement("input");
+    replacementInput.type = "hidden";
+    replacementInput.name = "replace_id";
+    form.append(replacementInput);
+    let currentFile = null;
+    let uploading = false;
+
+    const formatSize = (bytes) => bytes < 1024 ? `${bytes} B` : bytes < 1048576 ? `${(bytes / 1024).toFixed(1)} KB` : `${(bytes / 1048576).toFixed(2)} MB`;
+    const showMessage = (message, kind) => { feedback.textContent = message; feedback.className = `feedback ${kind || ""}`; };
+    const extensionOf = (name) => name.includes(".") ? name.split(".").pop().toLowerCase() : "";
+
+    function chooseFile(file) {
+        if (!file) return;
+        const extension = extensionOf(file.name);
+        if (!allowedExtensions.has(extension)) {
+            clearFile(); showMessage(copy.invalidType, "error"); return;
+        }
+        if (file.size > maxBytes) {
+            clearFile(); showMessage(copy.tooLarge.replace("%(size)s", formatSize(maxBytes)), "error"); return;
+        }
+        currentFile = file;
+        uploadButton.textContent = replacementInput.value ? "{% translate 'Replace' %}" : "{% translate 'Upload document' %}";
+        document.getElementById("file-name").textContent = file.name;
+        document.getElementById("file-details").textContent = `${extension.toUpperCase()} · ${formatSize(file.size)}`;
+        selected.hidden = false;
+        removeButton.hidden = false;
+        uploadButton.disabled = uploading;
+        showMessage("", "");
+    }
+
+    function clearFile() {
+        if (uploading) return;
+        currentFile = null;
+        replacementInput.value = "";
+        input.value = "";
+        selected.hidden = true;
+        removeButton.hidden = true;
+        uploadButton.disabled = true;
+        progress.hidden = true;
+        progress.value = 0;
+    }
+
+    input.addEventListener("change", () => chooseFile(input.files[0]));
+    removeButton.addEventListener("click", clearFile);
+    dropZone.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") { event.preventDefault(); input.click(); }
+    });
+    ["dragenter", "dragover"].forEach((name) => dropZone.addEventListener(name, (event) => {
+        event.preventDefault(); dropZone.classList.add("dragging");
+    }));
+    ["dragleave", "drop"].forEach((name) => dropZone.addEventListener(name, (event) => {
+        event.preventDefault(); dropZone.classList.remove("dragging");
+    }));
+    dropZone.addEventListener("drop", (event) => chooseFile(event.dataTransfer.files[0]));
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!currentFile || uploading) return;
+        const data = new FormData(form);
+        data.set("file", currentFile);
+        uploading = true;
+        uploadButton.disabled = true;
+        removeButton.disabled = true;
+        progress.hidden = false;
+        progress.value = 0;
+        showMessage(copy.uploading, "");
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", form.action || window.location.href);
+        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+        xhr.setRequestHeader("X-CSRFToken", form.elements.csrfmiddlewaretoken.value);
+        xhr.upload.addEventListener("progress", (progressEvent) => {
+            if (progressEvent.lengthComputable) {
+                progress.value = Math.round((progressEvent.loaded / progressEvent.total) * 100);
+                showMessage(`Uploading… ${progress.value}%`, "");
+            }
+        });
+        xhr.addEventListener("load", () => {
+            uploading = false;
+            removeButton.disabled = false;
+            let result = {};
+            try { result = JSON.parse(xhr.responseText); } catch (_) { /* handled by status below */ }
+            if (xhr.status >= 200 && xhr.status < 300) {
+                addDocumentRow(result);
+                showMessage(copy.uploadComplete, "success");
+                clearFile();
+            } else {
+                uploadButton.disabled = false;
+                showMessage(result.error || `${copy.uploadFailed} (${xhr.status})`, "error");
+                progress.hidden = true;
+            }
+        });
+        xhr.addEventListener("error", () => {
+            uploading = false;
+            uploadButton.disabled = false;
+            removeButton.disabled = false;
+            progress.hidden = true;
+            showMessage(copy.networkError, "error");
+        });
+        xhr.addEventListener("abort", () => {
+            uploading = false;
+            uploadButton.disabled = false;
+            removeButton.disabled = false;
+            progress.hidden = true;
+            showMessage(copy.uploadFailed, "error");
+        });
+        xhr.send(data);
+    });
+
+    function makeLink(label, href) {
+        const link = document.createElement("a"); link.textContent = label; link.href = href; return link;
+    }
+
+    function addDocumentRow(documentData) {
+        document.getElementById("empty-list")?.remove();
+        const row = document.createElement("article");
+        row.className = "document";
+        row.dataset.documentId = documentData.id;
+        const category = document.createElement("span"); category.className = "file-name"; category.textContent = documentData.doc_type;
+        const name = document.createElement("span"); name.className = "file-meta"; name.textContent = documentData.name;
+        const type = document.createElement("span"); type.className = "file-meta"; type.textContent = documentData.file_type;
+        const size = document.createElement("span"); size.className = "file-meta"; size.textContent = formatSize(documentData.file_size);
+        const date = document.createElement("span"); date.className = "file-meta"; date.textContent = new Date(documentData.uploaded_at).toLocaleString();
+        const status = document.createElement("span"); status.className = "file-meta"; status.textContent = `${documentData.status} · ${documentData.verification_source}`;
+        const actions = document.createElement("span"); actions.className = "row-actions";
+        const viewLink = makeLink("{% translate 'View' %}", `${documentData.file_url}?view=1`); viewLink.target = "_blank"; viewLink.rel = "noopener";
+        const downloadLink = makeLink("{% translate 'Download' %}", documentData.file_url);
+        const deleteForm = document.createElement("form"); deleteForm.method = "post"; deleteForm.action = document.getElementById("document-list").dataset.deleteTemplate.replace("/0/", `/${documentData.id}/`); deleteForm.className = "delete-form";
+        const csrf = document.createElement("input"); csrf.type = "hidden"; csrf.name = "csrfmiddlewaretoken"; csrf.value = form.elements.csrfmiddlewaretoken.value;
+        const deleteButton = document.createElement("button"); deleteButton.type = "submit"; deleteButton.textContent = "{% translate 'Delete' %}";
+        deleteForm.append(csrf, deleteButton);
+        actions.append(viewLink, downloadLink, deleteForm);
+        row.append(category, name, type, size, date, status, actions);
+        document.getElementById("document-list").prepend(row);
+    }
+
+    document.getElementById("document-list").addEventListener("submit", async (event) => {
+        const deleteForm = event.target.closest(".delete-form");
+        if (!deleteForm) return;
+        event.preventDefault();
+        if (!window.confirm(copy.deleteConfirm)) return;
+        const button = deleteForm.querySelector("button");
+        button.disabled = true;
+        try {
+            const response = await fetch(deleteForm.action, {
+                method: "POST",
+                headers: {"X-Requested-With": "XMLHttpRequest", "X-CSRFToken": deleteForm.elements.csrfmiddlewaretoken.value},
+            });
+            const result = await response.json();
+            if (!response.ok) throw new Error(result.error || copy.deleteFailed);
+            deleteForm.closest(".document").remove();
+            if (!document.querySelector(".document")) {
+                const empty = document.createElement("p"); empty.id = "empty-list"; empty.className = "muted"; empty.textContent = copy.emptyList;
+                document.getElementById("document-list").append(empty);
+            }
+            showMessage(copy.deleted, "success");
+        } catch (error) {
+            button.disabled = false;
+            showMessage(error.message || copy.deleteNetworkError, "error");
+        }
+    });
+
+    document.querySelectorAll(".replace-button").forEach((button) => button.addEventListener("click", () => {
+        replacementInput.value = button.dataset.documentId;
+        document.getElementById("upload-form").scrollIntoView({behavior: "smooth", block: "start"});
+        input.click();
+    }));
+})();
+</script>
+</body>
+</html>

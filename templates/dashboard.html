@@ -1,0 +1,84 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% translate "Dashboard" %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f5f7fb; margin: 0; color: #1d2b3a; }
+        .nav { background: #123456; color: white; padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; }
+        .nav a { color: white; text-decoration: none; margin-left: 14px; }
+        .wrap { max-width: 1100px; margin: 32px auto; padding: 0 18px 40px; }
+        .grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 22px; }
+        .card { background: white; border-radius: 14px; padding: 22px; box-shadow: 0 8px 22px rgba(0,0,0,0.06); }
+        .scholarships { margin-top: 24px; }
+        .scholarship { border: 1px solid #e9edf3; border-radius: 10px; padding: 16px; margin-top: 12px; }
+        .application { border-bottom: 1px solid #e9edf3; padding: 12px 0; }
+        .pill { display: inline-block; background: #e9f7ef; color: #116b43; padding: 6px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; }
+        .muted { color: #5b6d7f; }
+        a.button { display: inline-block; margin-top: 10px; text-decoration: none; background: #0d6efd; color: white; padding: 10px 16px; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <strong>Smart India Gov</strong>
+        <div>
+            <a href="{% url 'profile' %}">{% translate "Profile" %}</a>
+            <a href="{% url 'document-upload' %}">{% translate "Upload documents" %}</a>
+            <a href="{% url 'document-portfolio' %}">{% translate "My portfolio" %}</a>
+            <a href="{% url 'security-dashboard' %}">{% translate "Security" %}</a>
+            {% if user.is_staff %}{% if user.role == 'REVIEWER' or user.role == 'ADMIN' or user.role == 'SUPER_ADMIN' %}<a href="{% url 'document-review-queue' %}">{% translate "Verification queue" %}</a>{% endif %}{% endif %}
+            {% include "includes/language_selector.html" %}
+            <form method="post" action="{% url 'logout' %}">{% csrf_token %}<button type="submit">{% translate "Logout" %}</button></form>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <div class="grid">
+            <div class="card">
+                <h2>{% translate "Welcome" %}, {{ user.email }}</h2>
+                <p class="muted">{% translate "Complete your profile to improve scholarship matching." %}</p>
+                <a class="button" href="{% url 'profile' %}">{% translate "Edit profile" %}</a>
+            </div>
+            <div class="card">
+                <h3>{% translate "Profile snapshot" %}</h3>
+                <p><strong>{% translate "Name" %}:</strong> {% if profile.full_name %}{{ profile.full_name }}{% else %}{% translate "Not added yet" %}{% endif %}</p>
+                <p><strong>{% translate "State" %}:</strong> {% if profile.state %}{{ profile.state }}{% else %}{% translate "Not added yet" %}{% endif %}</p>
+                <p><strong>{% translate "Education level" %}:</strong> {% if profile.education_level %}{{ profile.education_level }}{% else %}{% translate "Not added yet" %}{% endif %}</p>
+            </div>
+        </div>
+
+        <div class="card scholarships">
+            <h3>{% translate "Available scholarships" %}</h3>
+            {% if scholarships %}
+                {% for scholarship in scholarships %}
+                    <div class="scholarship">
+                        <h4>{{ scholarship.name }}</h4>
+                        {% if scholarship.is_demo %}<div class="pill">{% translate "Demo listing" %}</div>{% endif %}
+                        <p class="muted">{{ scholarship.provider }}{% if scholarship.closes_on %} · {% translate "Closes" %} {{ scholarship.closes_on|date:'M j, Y' }}{% endif %}</p>
+                        {% if scholarship.description %}<p>{{ scholarship.description }}</p>{% else %}<p>{% translate "No description provided yet." %}</p>{% endif %}
+                        <a class="button" href="{% url 'scholarship-detail' scholarship.pk %}">{% translate "Check eligibility" %}</a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="muted">{% translate "No open scholarships are available at the moment." %}</p>
+            {% endif %}
+        </div>
+
+        <div class="card scholarships">
+            <h3>{% translate "Your applications" %}</h3>
+            {% for application in applications %}
+                <div class="application">
+                    <strong>{{ application.scholarship.name }}</strong>
+                    <span class="pill">{{ application.get_status_display }}</span>
+                    <p class="muted">{% translate "Submitted" %} {{ application.submitted_at|date:'M j, Y' }}</p>
+                    {% if application.review_note %}<p>{{ application.review_note }}</p>{% endif %}
+                </div>
+            {% empty %}
+                <p class="muted">{% translate "You have not submitted an application yet." %}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

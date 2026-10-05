@@ -1,0 +1,624 @@
+#
+msgid ""
+msgstr ""
+"Language: hi\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Language"
+msgstr "भाषा"
+
+msgid "Create account"
+msgstr "खाता बनाएँ"
+
+msgid "Create your account"
+msgstr "अपना खाता बनाएँ"
+
+msgid "Student document account"
+msgstr "विद्यार्थी दस्तावेज़ खाता"
+
+msgid "Email"
+msgstr "ईमेल"
+
+msgid "Indian mobile number"
+msgstr "भारतीय मोबाइल नंबर"
+
+msgid "Password"
+msgstr "पासवर्ड"
+
+msgid "Already have an account?"
+msgstr "क्या आपका खाता पहले से है?"
+
+msgid "Login"
+msgstr "लॉग इन"
+
+msgid "Secure sign in"
+msgstr "सुरक्षित साइन इन"
+
+msgid "Sign in"
+msgstr "साइन इन"
+
+msgid "Use email and password"
+msgstr "ईमेल और पासवर्ड का उपयोग करें"
+
+msgid "Verify mobile number"
+msgstr "मोबाइल नंबर सत्यापित करें"
+
+msgid "Secure account verification"
+msgstr "सुरक्षित खाता सत्यापन"
+
+msgid "Verify your mobile"
+msgstr "अपना मोबाइल सत्यापित करें"
+
+msgid "The 6-digit code expires in"
+msgstr "6 अंकों का कोड समाप्त होने में"
+
+msgid "seconds"
+msgstr "सेकंड"
+
+msgid "Verify code"
+msgstr "कोड सत्यापित करें"
+
+msgid "Return to login"
+msgstr "लॉगिन पर लौटें"
+
+msgid "Document upload"
+msgstr "दस्तावेज़ अपलोड"
+
+msgid "Document category"
+msgstr "दस्तावेज़ श्रेणी"
+
+msgid "Drop a document here or choose a file"
+msgstr "दस्तावेज़ यहाँ छोड़ें या फ़ाइल चुनें"
+
+msgid "Upload document"
+msgstr "दस्तावेज़ अपलोड करें"
+
+msgid "Remove selected file"
+msgstr "चुनी गई फ़ाइल हटाएँ"
+
+msgid "Uploaded documents"
+msgstr "अपलोड किए गए दस्तावेज़"
+
+msgid "No documents uploaded yet."
+msgstr "अभी तक कोई दस्तावेज़ अपलोड नहीं किया गया है।"
+
+msgid "View"
+msgstr "देखें"
+
+msgid "Download"
+msgstr "डाउनलोड"
+
+msgid "Replace"
+msgstr "बदलें"
+
+msgid "Delete"
+msgstr "हटाएँ"
+
+msgid "Pending Verification"
+msgstr "सत्यापन लंबित"
+
+msgid "Verified"
+msgstr "सत्यापित"
+
+msgid "Uploaded by user"
+msgstr "उपयोगकर्ता द्वारा अपलोड किया गया"
+
+msgid "Verified by admin"
+msgstr "प्रशासक द्वारा सत्यापित"
+
+msgid "Verified through authorized API"
+msgstr "अधिकृत API द्वारा सत्यापित"
+
+msgid "Rejected"
+msgstr "अस्वीकृत"
+
+msgid "Rejected because: %(reason)s"
+msgstr "अस्वीकृति का कारण: %(reason)s"
+
+msgid "Verification queue"
+msgstr "सत्यापन कतार"
+
+msgid "Student document review"
+msgstr "विद्यार्थी दस्तावेज़ समीक्षा"
+
+msgid "My portfolio"
+msgstr "मेरा पोर्टफोलियो"
+
+msgid "My Documents"
+msgstr "मेरे दस्तावेज़"
+
+msgid "Document portfolio"
+msgstr "दस्तावेज़ पोर्टफोलियो"
+
+msgid "Aadhaar card"
+msgstr "आधार कार्ड"
+
+msgid "PAN card"
+msgstr "पैन कार्ड"
+
+msgid "Community certificate"
+msgstr "समुदाय प्रमाणपत्र"
+
+msgid "Income certificate"
+msgstr "आय प्रमाणपत्र"
+
+msgid "Nativity certificate"
+msgstr "निवास प्रमाणपत्र"
+
+msgid "Birth certificate"
+msgstr "जन्म प्रमाणपत्र"
+
+msgid "Bank passbook"
+msgstr "बैंक पासबुक"
+
+msgid "10th certificate"
+msgstr "10वीं प्रमाणपत्र"
+
+msgid "12th certificate"
+msgstr "12वीं प्रमाणपत्र"
+
+msgid "Graduation certificate"
+msgstr "स्नातक प्रमाणपत्र"
+
+msgid "Other"
+msgstr "अन्य"
+
+msgid "Profile"
+msgstr "प्रोफ़ाइल"
+
+msgid "Security"
+msgstr "सुरक्षा"
+
+msgid "Settings"
+msgstr "सेटिंग्स"
+
+msgid "Dashboard"
+msgstr "डैशबोर्ड"
+
+msgid "Upload documents"
+msgstr "दस्तावेज़ अपलोड करें"
+
+msgid "Logout"
+msgstr "लॉग आउट"
+
+msgid "Save profile"
+msgstr "प्रोफ़ाइल सहेजें"
+
+msgid "Name"
+msgstr "नाम"
+
+msgid "State"
+msgstr "राज्य"
+
+msgid "District"
+msgstr "ज़िला"
+
+msgid "Education level"
+msgstr "शिक्षा स्तर"
+
+msgid "Institution"
+msgstr "संस्थान"
+
+msgid "Mobile number verification"
+msgstr "मोबाइल नंबर सत्यापन"
+
+msgid "Email verification"
+msgstr "ईमेल सत्यापन"
+
+msgid "Not verified"
+msgstr "सत्यापित नहीं"
+
+msgid "Private storage enabled"
+msgstr "निजी संग्रहण सक्रिय"
+
+msgid "Last login"
+msgstr "पिछला लॉगिन"
+
+msgid "Active sessions"
+msgstr "सक्रिय सत्र"
+
+msgid "Not available"
+msgstr "उपलब्ध नहीं"
+
+msgid "Sign out from all devices"
+msgstr "सभी उपकरणों से लॉग आउट करें"
+
+msgid "Sign out from every device?"
+msgstr "क्या सभी उपकरणों से लॉग आउट करना है?"
+
+msgid "Eligible to apply"
+msgstr "आवेदन के लिए पात्र"
+
+msgid "Not eligible"
+msgstr "पात्र नहीं"
+
+msgid "More information required"
+msgstr "अधिक जानकारी आवश्यक"
+
+msgid "Under review"
+msgstr "समीक्षाधीन"
+
+msgid "Approved"
+msgstr "स्वीकृत"
+
+msgid "You have already applied for this scholarship."
+msgstr "आपने इस छात्रवृत्ति के लिए पहले ही आवेदन किया है।"
+
+msgid "Your scholarship application has been submitted."
+msgstr "आपका छात्रवृत्ति आवेदन जमा कर दिया गया है।"
+
+msgid "Choose a file to upload."
+msgstr "अपलोड करने के लिए फ़ाइल चुनें।"
+
+msgid "Document uploaded successfully."
+msgstr "दस्तावेज़ सफलतापूर्वक अपलोड हुआ।"
+
+msgid "Choose a valid document type."
+msgstr "मान्य दस्तावेज़ प्रकार चुनें।"
+
+msgid "Secure document storage is not configured. Contact support."
+msgstr "सुरक्षित दस्तावेज़ संग्रहण कॉन्फ़िगर नहीं है। सहायता से संपर्क करें।"
+
+msgid "Upload failed. Check your connection and try again."
+msgstr "अपलोड विफल हुआ। कनेक्शन जाँचकर फिर प्रयास करें।"
+
+msgid "Upload failed unexpectedly. Please try again."
+msgstr "अनपेक्षित अपलोड त्रुटि। कृपया फिर प्रयास करें।"
+
+msgid "Could not delete the document. Please try again."
+msgstr "दस्तावेज़ हटाया नहीं जा सका। कृपया फिर प्रयास करें।"
+
+msgid "File is too large. The maximum size is 5 MB."
+msgstr "फ़ाइल बहुत बड़ी है। अधिकतम आकार 5 MB है।"
+
+msgid "The selected file is empty."
+msgstr "चुनी गई फ़ाइल खाली है।"
+
+msgid "Unsupported file type. Upload PDF, DOC, DOCX, TXT, JPG, JPEG, or PNG."
+msgstr ""
+"असमर्थित फ़ाइल प्रकार। PDF, DOC, DOCX, TXT, JPG, JPEG या PNG अपलोड करें।"
+
+msgid "The file contents do not match the selected file type."
+msgstr "फ़ाइल की सामग्री चुने गए प्रकार से मेल नहीं खाती।"
+
+msgid "Document completion"
+msgstr "दस्तावेज़ पूर्णता"
+
+msgid "Verified document completion"
+msgstr "सत्यापित दस्तावेज़ पूर्णता"
+
+msgid "Mobile"
+msgstr "मोबाइल"
+
+msgid "Account created"
+msgstr "खाता बनाने की तिथि"
+
+msgid "Scholarship and document support portal"
+msgstr "छात्रवृत्ति और दस्तावेज़ सहायता पोर्टल"
+
+msgid ""
+"A secure place to organize student documents and discover scholarship "
+"opportunities."
+msgstr ""
+"विद्यार्थी दस्तावेज़ व्यवस्थित करने और छात्रवृत्ति के अवसर खोजने का सुरक्षित"
+" स्थान।"
+
+msgid "Your documents stay private and are reviewed by authorized staff."
+msgstr ""
+"आपके दस्तावेज़ निजी रहते हैं और केवल अधिकृत कर्मचारी उनकी समीक्षा करते हैं।"
+
+msgid "General document"
+msgstr "सामान्य दस्तावेज़"
+
+msgid "PDF, DOC, DOCX, TXT, JPG, JPEG, or PNG. Maximum 5 MB per file."
+msgstr "PDF, DOC, DOCX, TXT, JPG, JPEG या PNG। प्रत्येक फ़ाइल अधिकतम 5 MB।"
+
+msgid "Document pages"
+msgstr "दस्तावेज़ पृष्ठ"
+
+msgid "Uploading document…"
+msgstr "दस्तावेज़ अपलोड हो रहा है…"
+
+msgid "Upload complete."
+msgstr "अपलोड पूरा हुआ।"
+
+msgid "Unsupported file type. Choose PDF, DOC, DOCX, TXT, JPG, JPEG, or PNG."
+msgstr "असमर्थित फ़ाइल प्रकार। PDF, DOC, DOCX, TXT, JPG, JPEG या PNG चुनें।"
+
+msgid "File too large. Maximum size is %(size)s."
+msgstr "फ़ाइल बहुत बड़ी है। अधिकतम आकार %(size)s है।"
+
+msgid "Upload failed. Please try again."
+msgstr "अपलोड विफल हुआ। कृपया फिर प्रयास करें।"
+
+msgid "Network error. Check your connection and retry."
+msgstr "नेटवर्क त्रुटि। कनेक्शन जाँचकर फिर प्रयास करें।"
+
+msgid "Delete this document? This cannot be undone."
+msgstr "यह दस्तावेज़ हटाएँ? इसे वापस नहीं लाया जा सकता।"
+
+msgid "Delete failed. Please try again."
+msgstr "हटाना विफल हुआ। कृपया फिर प्रयास करें।"
+
+msgid "Network error while deleting. Retry."
+msgstr "हटाते समय नेटवर्क त्रुटि हुई। फिर प्रयास करें।"
+
+msgid "Document deleted."
+msgstr "दस्तावेज़ हटा दिया गया।"
+
+msgid "Complete your profile"
+msgstr "अपनी प्रोफ़ाइल पूरी करें"
+
+msgid "Preferred language"
+msgstr "पसंदीदा भाषा"
+
+msgid "Full name"
+msgstr "पूरा नाम"
+
+msgid "Date of birth"
+msgstr "जन्म तिथि"
+
+msgid "Course"
+msgstr "पाठ्यक्रम"
+
+msgid "Category"
+msgstr "श्रेणी"
+
+msgid "Annual family income"
+msgstr "वार्षिक पारिवारिक आय"
+
+msgid "First generation graduate"
+msgstr "परिवार में प्रथम स्नातक"
+
+msgid "Welcome"
+msgstr "स्वागत है"
+
+msgid "Complete your profile to improve scholarship matching."
+msgstr "छात्रवृत्ति मिलान बेहतर करने के लिए अपनी प्रोफ़ाइल पूरी करें।"
+
+msgid "Edit profile"
+msgstr "प्रोफ़ाइल संपादित करें"
+
+msgid "Profile snapshot"
+msgstr "प्रोफ़ाइल सारांश"
+
+msgid "Not added yet"
+msgstr "अभी जोड़ा नहीं गया"
+
+msgid "Available scholarships"
+msgstr "उपलब्ध छात्रवृत्तियाँ"
+
+msgid "Demo listing"
+msgstr "डेमो सूची"
+
+msgid "Closes"
+msgstr "अंतिम तिथि"
+
+msgid "No description provided yet."
+msgstr "अभी कोई विवरण उपलब्ध नहीं है।"
+
+msgid "Check eligibility"
+msgstr "पात्रता जाँचें"
+
+msgid "No open scholarships are available at the moment."
+msgstr "इस समय कोई खुली छात्रवृत्ति उपलब्ध नहीं है।"
+
+msgid "Your applications"
+msgstr "आपके आवेदन"
+
+msgid "Submitted"
+msgstr "जमा किया गया"
+
+msgid "You have not submitted an application yet."
+msgstr "आपने अभी तक कोई आवेदन जमा नहीं किया है।"
+
+msgid "Rejected because: %(reason)s"
+msgstr "अस्वीकृति का कारण: %(reason)s"
+
+msgid "Date of birth cannot be in the future"
+msgstr "जन्म तिथि भविष्य में नहीं हो सकती"
+
+msgid "Age requirement"
+msgstr "आयु संबंधी पात्रता"
+
+msgid "Age %(age)s is below the minimum age of %(limit)s"
+msgstr "आयु %(age)s है; न्यूनतम आयु %(limit)s है"
+
+msgid "Age %(age)s is above the maximum age of %(limit)s"
+msgstr "आयु %(age)s है; अधिकतम आयु %(limit)s है"
+
+msgid "Income exceeds limit of %(limit)s"
+msgstr "आय %(limit)s की सीमा से अधिक है"
+
+msgid "Income limit"
+msgstr "आय सीमा"
+
+msgid "First-generation status"
+msgstr "परिवार में प्रथम स्नातक की स्थिति"
+
+msgid "First-generation graduate required"
+msgstr "परिवार में प्रथम स्नातक होना आवश्यक है"
+
+msgid "Verified document: %(name)s"
+msgstr "सत्यापित दस्तावेज़: %(name)s"
+
+msgid "%(name)s document must be verified (current status: %(status)s)"
+msgstr "%(name)s दस्तावेज़ सत्यापित होना चाहिए (वर्तमान स्थिति: %(status)s)"
+
+msgid "Document: %(name)s"
+msgstr "दस्तावेज़: %(name)s"
+
+msgid "%(label)s '%(value)s' is not in the listed criteria"
+msgstr "%(label)s '%(value)s' सूचीबद्ध मानदंडों में नहीं है"
+
+msgid "No document added"
+msgstr "कोई दस्तावेज़ नहीं जोड़ा गया"
+
+msgid "Private portfolio"
+msgstr "निजी पोर्टफोलियो"
+
+msgid "Document collection"
+msgstr "दस्तावेज़ संग्रह"
+
+msgid "documents stored"
+msgstr "संग्रहीत दस्तावेज़"
+
+msgid "Not added"
+msgstr "जोड़ा नहीं गया"
+
+msgid "Add a document"
+msgstr "दस्तावेज़ जोड़ें"
+
+msgid "Update profile"
+msgstr "प्रोफ़ाइल अपडेट करें"
+
+msgid "Back to dashboard"
+msgstr "डैशबोर्ड पर लौटें"
+
+msgid "Applications for this scholarship are not open yet."
+msgstr "इस छात्रवृत्ति के लिए आवेदन अभी शुरू नहीं हुए हैं।"
+
+msgid "The application deadline has passed."
+msgstr "आवेदन की अंतिम तिथि निकल चुकी है।"
+
+msgid "Complete the eligibility requirements before applying."
+msgstr "आवेदन से पहले पात्रता आवश्यकताएँ पूरी करें।"
+
+msgid "This scholarship does not have eligibility criteria yet."
+msgstr "इस छात्रवृत्ति के लिए पात्रता मानदंड अभी निर्धारित नहीं हैं।"
+
+msgid "Requirements met"
+msgstr "पूरी की गई आवश्यकताएँ"
+
+msgid "Information or documents needed"
+msgstr "आवश्यक जानकारी या दस्तावेज़"
+
+msgid "Criteria not met"
+msgstr "पात्रता मानदंड पूरे नहीं हुए"
+
+msgid "Application"
+msgstr "आवेदन"
+
+msgid "Submit application"
+msgstr "आवेदन जमा करें"
+
+msgid "Note for the reviewer (optional)"
+msgstr "समीक्षक के लिए टिप्पणी (वैकल्पिक)"
+
+msgid "Official scholarship information"
+msgstr "छात्रवृत्ति की आधिकारिक जानकारी"
+
+msgid "User-uploaded files are not official DigiLocker documents."
+msgstr ""
+"उपयोगकर्ता द्वारा अपलोड की गई फ़ाइलें आधिकारिक DigiLocker दस्तावेज़ नहीं "
+"हैं।"
+
+msgid "Verify"
+msgstr "सत्यापित करें"
+
+msgid "Reject"
+msgstr "अस्वीकार करें"
+
+msgid "Rejection reason"
+msgstr "अस्वीकृति का कारण"
+
+msgid "No documents are waiting for review."
+msgstr "समीक्षा के लिए कोई दस्तावेज़ लंबित नहीं है।"
+
+msgid ""
+"Set both FIREBASE_STORAGE_BUCKET and FIREBASE_SERVICE_ACCOUNT_KEY, or leave "
+"both empty."
+msgstr ""
+"FIREBASE_STORAGE_BUCKET और FIREBASE_SERVICE_ACCOUNT_KEY दोनों सेट करें या "
+"दोनों खाली छोड़ें।"
+
+msgid "Enter a valid 10-digit Indian mobile number."
+msgstr "वैध 10 अंकों का भारतीय मोबाइल नंबर दर्ज करें।"
+
+msgid "Too many verification requests. Wait before trying again."
+msgstr "बहुत अधिक सत्यापन अनुरोध हुए। फिर प्रयास करने से पहले प्रतीक्षा करें।"
+
+msgid "Please wait before requesting another code."
+msgstr "दूसरा कोड माँगने से पहले प्रतीक्षा करें।"
+
+msgid "This code has expired. Resend a new code to continue."
+msgstr "यह कोड समाप्त हो गया है। आगे बढ़ने के लिए नया कोड फिर से भेजें।"
+
+msgid "Too many incorrect codes. Try again after the temporary lockout."
+msgstr "बहुत बार गलत कोड दर्ज हुआ। अस्थायी रोक के बाद फिर प्रयास करें।"
+
+msgid "That code is incorrect. Check it and try again."
+msgstr "कोड गलत है। जाँचकर फिर प्रयास करें।"
+
+msgid "Step 1: Mobile number"
+msgstr "चरण 1: मोबाइल नंबर"
+
+msgid "Step 3: Verified"
+msgstr "चरण 3: सत्यापित"
+
+msgid "Change Mobile Number"
+msgstr "मोबाइल नंबर बदलें"
+
+msgid "Enter a different mobile number."
+msgstr "कोई दूसरा मोबाइल नंबर दर्ज करें।"
+
+msgid "Change mobile number"
+msgstr "मोबाइल नंबर बदलें"
+
+msgid "Mobile Number Verified"
+msgstr "मोबाइल नंबर सत्यापित"
+
+msgid "Your phone has been verified. Your account is ready."
+msgstr "आपका मोबाइल सत्यापित हो गया है। आपका खाता तैयार है।"
+
+msgid "Continue to dashboard"
+msgstr "डैशबोर्ड पर जाएँ"
+
+msgid "Admin"
+msgstr "प्रशासक"
+
+msgid "Uploaded"
+msgstr "अपलोड किया गया"
+
+msgid "Document verification"
+msgstr "दस्तावेज़ सत्यापन"
+
+msgid "Review uploaded records and verify only what you can substantiate."
+msgstr ""
+"अपलोड किए गए रिकॉर्ड की समीक्षा करें और केवल उसी की पुष्टि करें जिसे आप "
+"प्रमाणित कर सकते हैं।"
+
+msgid "Documents grouped by certificate type"
+msgstr "प्रमाणपत्र प्रकार के अनुसार दस्तावेज़"
+
+msgid "Your certificates and identity documents, organized in one place."
+msgstr "आपके प्रमाणपत्र और पहचान दस्तावेज़ एक ही स्थान पर व्यवस्थित हैं।"
+
+msgid "Profile details"
+msgstr "प्रोफ़ाइल विवरण"
+
+msgid "Deadline"
+msgstr "अंतिम तिथि"
+
+msgid "No closing date listed"
+msgstr "कोई अंतिम तिथि दर्ज नहीं है"
+
+msgid "Eligibility check"
+msgstr "पात्रता जाँच"
+
+msgid "Eligibility rules have not been configured for this scholarship."
+msgstr "इस छात्रवृत्ति के लिए पात्रता नियम निर्धारित नहीं किए गए हैं।"
+
+msgid "Your application is"
+msgstr "आपका आवेदन"
+
+msgid "Attached documents: your currently uploaded files."
+msgstr "संलग्न दस्तावेज़: आपकी वर्तमान में अपलोड की गई फ़ाइलें।"
+
+msgid "Manage documents"
+msgstr "दस्तावेज़ प्रबंधित करें"
+
+msgid "Resolve the eligibility items before submitting an application."
+msgstr "आवेदन जमा करने से पहले पात्रता संबंधी आवश्यकताएँ पूरी करें।"

@@ -1,0 +1,92 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% translate "Document portfolio" %}</title>
+    <style>
+        :root { color-scheme: light; font-family: Georgia, 'Times New Roman', serif; color: #193632; background: #f1f5ef; }
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 18px max(24px, calc((100vw - 1080px)/2)); background: #173c3b; color: #f6f4e9; }
+        header a { color: inherit; }
+        main { width: min(1080px, calc(100% - 36px)); margin: 34px auto 70px; }
+        .masthead { display: flex; justify-content: space-between; align-items: end; gap: 20px; padding: 16px 0 24px; border-bottom: 1px solid #bacbc0; animation: reveal .45s ease both; }
+        .eyebrow { color: #b3492e; font: 700 .76rem Arial, sans-serif; text-transform: uppercase; }
+        h1 { margin: 8px 0; font-size: 2.5rem; }
+        .muted { color: #5a6c67; }
+        .count { min-width: 130px; padding: 12px 16px; background: #e3ebe3; border-left: 3px solid #c8512f; }
+        .count strong { display: block; font-size: 1.7rem; }
+        .completion { margin: 22px 0 8px; }
+        .completion progress { width: 100%; height: 12px; accent-color: #c8512f; }
+        .profile-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; padding: 18px 0 26px; border-bottom: 1px solid #bacbc0; }
+        .profile-item span { display: block; margin-bottom: 4px; color: #5a6c67; font: 700 .72rem Arial, sans-serif; text-transform: uppercase; }
+        .profile-item strong { overflow-wrap: anywhere; }
+        .section-heading { display: flex; justify-content: space-between; align-items: baseline; margin: 34px 0 10px; }
+        .section-heading h2 { margin: 0; font-size: 1.45rem; }
+        .section-heading a { color: #173c3b; }
+        .category-list { border-top: 1px solid #bacbc0; }
+        .category { display: grid; grid-template-columns: minmax(190px, 1fr) minmax(0, 2fr); gap: 20px; padding: 18px 8px; border-bottom: 1px solid #d1dcd4; animation: reveal .45s ease both; }
+        .category-title { display: flex; align-items: start; gap: 12px; }
+        .category-index { color: #bd573a; font: 700 .78rem Arial, sans-serif; padding-top: 3px; }
+        .category-title h3 { margin: 0; font-size: 1.1rem; }
+        .files { display: grid; gap: 10px; }
+        .file-row { display: flex; justify-content: space-between; align-items: center; gap: 14px; }
+        .file-row strong { overflow-wrap: anywhere; }
+        .file-meta { display: block; margin-top: 4px; color: #5a6c67; font: .83rem Arial, sans-serif; }
+        .file-actions { display: flex; flex-shrink: 0; gap: 12px; }
+        .file-actions a { color: #173c3b; }
+        .missing { color: #778781; font-style: italic; }
+        .portfolio-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+        .button { display: inline-block; padding: 11px 16px; background: #c8512f; color: white; text-decoration: none; }
+        .button.secondary { background: #dce5de; color: #193632; }
+        @keyframes reveal { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 720px) {
+            header { padding: 16px; }
+            .masthead { align-items: start; flex-direction: column; }
+            h1 { font-size: 2rem; }
+            .profile-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .category { grid-template-columns: 1fr; gap: 10px; }
+            .file-row { align-items: start; flex-direction: column; }
+        }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+    </style>
+</head>
+<body>
+<header><strong>Smart India Gov · {% translate "My Documents" %}</strong><nav>{% include "includes/language_selector.html" %} <a href="{% url 'dashboard' %}">{% translate "Back to dashboard" %}</a></nav></header>
+<main>
+    <section class="masthead">
+        <div><div class="eyebrow">{% translate "Private portfolio" %} · {{ user.email }}</div><h1>{% if profile.full_name %}{{ profile.full_name }}{% else %}{{ user.email }}{% endif %}</h1><p class="muted">{% translate "Your certificates and identity documents, organized in one place." %}</p></div>
+        <div class="count"><strong>{{ document_count }}</strong><span>{% translate "documents stored" %}</span></div>
+    </section>
+    <section class="completion" aria-label="{% translate 'Document completion' %}">
+        <strong>{% translate "Verified document completion" %}: {{ completion_percentage }}%</strong>
+        <progress value="{{ completion_percentage }}" max="100" aria-label="{{ completion_percentage }}%"></progress>
+    </section>
+    <section class="profile-strip" aria-label="{% translate 'Profile details' %}">
+        <div class="profile-item"><span>{% translate "State" %}</span><strong>{% if profile.state %}{{ profile.state }}{% else %}{% translate "Not added" %}{% endif %}</strong></div>
+        <div class="profile-item"><span>{% translate "District" %}</span><strong>{% if profile.district %}{{ profile.district }}{% else %}{% translate "Not added" %}{% endif %}</strong></div>
+        <div class="profile-item"><span>{% translate "Education level" %}</span><strong>{% if profile.education_level %}{{ profile.education_level }}{% else %}{% translate "Not added" %}{% endif %}</strong></div>
+        <div class="profile-item"><span>{% translate "Institution" %}</span><strong>{% if profile.institution %}{{ profile.institution }}{% else %}{% translate "Not added" %}{% endif %}</strong></div>
+    </section>
+    <div class="section-heading"><h2>{% translate "Document collection" %}</h2><a href="{% url 'profile' %}">{% translate "Edit profile" %}</a></div>
+    <section class="category-list" aria-label="{% translate 'Documents grouped by certificate type' %}">
+        {% for category in categories %}
+        <article class="category" style="animation-delay: {{ forloop.counter0 }}50ms">
+            <div class="category-title"><span class="category-index">{{ forloop.counter|stringformat:'02d' }}</span><h3>{{ category.type.display_name }}</h3></div>
+            <div class="files">
+                {% for document in category.documents %}
+                <div class="file-row">
+                    <div><strong>{{ document.original_filename|default:document.file.name }}</strong><span class="file-meta">{{ document.file_type|default:document.doc_type.display_name }} · {{ document.file_size|filesizeformat }} · {{ document.get_status_display }} · {{ document.get_verification_source_display }} · {{ document.uploaded_at|date:'M j, Y' }}</span></div>
+                    <div class="file-actions"><a href="{% url 'doc-download' document.pk %}?view=1" target="_blank" rel="noopener">{% translate "View" %}</a><a href="{% url 'doc-download' document.pk %}">{% translate "Download" %}</a></div>
+                </div>
+                {% empty %}<p class="missing">{% translate "No document added" %}</p>{% endfor %}
+            </div>
+        </article>
+        {% endfor %}
+    </section>
+    <div class="portfolio-actions"><a class="button" href="{% url 'document-upload' %}">{% translate "Add a document" %}</a><a class="button secondary" href="{% url 'profile' %}">{% translate "Update profile" %}</a></div>
+</main>
+</body>
+</html>

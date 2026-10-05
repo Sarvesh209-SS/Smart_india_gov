@@ -1,0 +1,49 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% translate "Profile" %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f5f7fb; margin: 0; }
+        .wrap { max-width: 720px; margin: 40px auto; background: white; padding: 28px; border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+        h2 { margin-top: 0; }
+        form { display: grid; gap: 14px; }
+        .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+        input, select { width: 100%; padding: 10px 12px; border: 1px solid #d8e0eb; border-radius: 8px; box-sizing: border-box; }
+        button { background: #0d6efd; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+        .checkbox { display: flex; align-items: center; gap: 8px; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        {% include "includes/language_selector.html" %}
+        <h2>{% translate "Complete your profile" %}</h2>
+        <dl>
+            <dt>{% translate "Mobile number" %}</dt><dd>{{ user.masked_mobile|default:_('Not added') }}</dd>
+            <dt>{% translate "Email" %}</dt><dd>{{ user.email }}</dd>
+            <dt>{% translate "Account created" %}</dt><dd>{{ user.date_joined|date:'M j, Y' }}</dd>
+        </dl>
+        <form method="post">
+            {% csrf_token %}
+            <label>{% translate "Preferred language" %}
+                <select name="preferred_language"><option value="en" {% if user.preferred_language == 'en' %}selected{% endif %}>English</option><option value="ta" {% if user.preferred_language == 'ta' %}selected{% endif %}>தமிழ்</option><option value="hi" {% if user.preferred_language == 'hi' %}selected{% endif %}>हिन्दी</option></select>
+            </label>
+            <div class="grid">
+                <label>{% translate "Full name" %}<input type="text" name="full_name" value="{{ profile.full_name }}"></label>
+                <label>{% translate "Date of birth" %}<input type="date" name="date_of_birth" value="{{ profile.date_of_birth|date:'Y-m-d' }}"></label>
+                <label>{% translate "State" %}<input type="text" name="state" value="{{ profile.state }}"></label>
+                <label>{% translate "District" %}<input type="text" name="district" value="{{ profile.district }}"></label>
+                <label>{% translate "Education level" %}<input type="text" name="education_level" value="{{ profile.education_level }}"></label>
+                <label>{% translate "Course" %}<input type="text" name="course" value="{{ profile.course }}"></label>
+                <label>{% translate "Institution" %}<input type="text" name="institution" value="{{ profile.institution }}"></label>
+                <label>{% translate "Category" %}<input type="text" name="category" value="{{ profile.category }}"></label>
+                <label>{% translate "Annual family income" %}<input type="number" name="annual_family_income" value="{{ profile.annual_family_income }}"></label>
+                <label class="checkbox"><input type="checkbox" name="first_generation_graduate" {% if profile.first_generation_graduate %}checked{% endif %}> {% translate "First generation graduate" %}</label>
+            </div>
+            <button type="submit">{% translate "Save profile" %}</button>
+        </form>
+    </div>
+</body>
+</html>

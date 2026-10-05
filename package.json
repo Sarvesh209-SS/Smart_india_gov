@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "firebase": "^12.19.0"
+  },
+  "name": "smart_india_gov",
+  "version": "1.0.0",
+  "description": "Independent assistance platform, not an official Government of India site.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

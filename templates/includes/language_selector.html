@@ -1,0 +1,11 @@
+{% load i18n %}
+<form method="post" action="{% url 'set-language' %}" class="language-selector">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+    <label class="visually-hidden" for="language-choice">{% translate "Language" %}</label>
+    <select id="language-choice" name="language" aria-label="{% translate 'Language' %}" onchange="this.form.submit()">
+        <option value="en" {% if request.LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
+        <option value="ta" {% if request.LANGUAGE_CODE == 'ta' %}selected{% endif %}>தமிழ்</option>
+        <option value="hi" {% if request.LANGUAGE_CODE == 'hi' %}selected{% endif %}>हिन्दी</option>
+    </select>
+</form>

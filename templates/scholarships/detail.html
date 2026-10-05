@@ -1,0 +1,60 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ scholarship.name }}</title>
+    <style>
+        :root { font-family: Georgia, 'Times New Roman', serif; color: #172d32; background: #f1f5ef; }
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        header { background: #173c3b; color: #f6f4e9; padding: 18px max(24px, calc((100vw - 1000px)/2)); display: flex; justify-content: space-between; }
+        header a { color: inherit; }
+        main { width: min(1000px, calc(100% - 32px)); margin: 40px auto; }
+        .eyebrow { color: #a33d26; text-transform: uppercase; font: 700 .8rem Arial, sans-serif; }
+        h1 { font-size: 2.5rem; margin: 8px 0; }
+        .meta { color: #5b6b69; }
+        .columns { display: grid; grid-template-columns: 1.2fr .8fr; gap: 36px; margin-top: 30px; }
+        .criteria { border-top: 1px solid #cbd7cf; padding-top: 14px; }
+        .criteria li { margin: 8px 0; }
+        form { border-top: 1px solid #cbd7cf; padding-top: 18px; }
+        textarea { display: block; width: 100%; min-height: 110px; padding: 12px; font: inherit; border: 1px solid #a9b9b0; }
+        button { margin-top: 12px; border: 0; padding: 12px 18px; background: #c8512f; color: white; font: inherit; cursor: pointer; }
+        .messages { padding: 0; list-style: none; }
+        @media (max-width: 700px) { .columns { grid-template-columns: 1fr; } h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+<header><strong>Smart India Gov</strong><nav>{% include "includes/language_selector.html" %} <a href="{% url 'dashboard' %}">{% translate "Dashboard" %}</a></nav></header>
+<main>
+    <div class="eyebrow">{{ scholarship.provider }}</div>
+    <h1>{{ scholarship.name }}</h1>
+    <p class="meta">{% if scholarship.closes_on %}{% translate "Deadline" %} {{ scholarship.closes_on|date:'M j, Y' }}{% else %}{% translate "No closing date listed" %}{% endif %} · <a href="{{ scholarship.official_url }}" target="_blank" rel="noopener">{% translate "Official scholarship information" %}</a></p>
+    <p>{{ scholarship.description|linebreaksbr }}</p>
+    {% if scholarship.is_demo %}<p><strong>{% translate "Demo listing" %}</strong></p>{% endif %}
+    {% if messages %}<ul class="messages">{% for message in messages %}<li>{{ message }}</li>{% endfor %}</ul>{% endif %}
+    <div class="columns">
+        <section class="criteria">
+            <h2>{% translate "Eligibility check" %}</h2>
+            {% if eligibility %}
+                <p><strong>{{ eligibility.get_status_display|default:eligibility.status }}</strong></p>
+                {% if eligibility.met %}<h3>{% translate "Requirements met" %}</h3><ul>{% for item in eligibility.met %}<li>{{ item }}</li>{% endfor %}</ul>{% endif %}
+                {% if eligibility.missing %}<h3>{% translate "Information or documents needed" %}</h3><ul>{% for item in eligibility.missing %}<li>{{ item }}</li>{% endfor %}</ul><p><a href="{% url 'profile' %}">{% translate "Update profile" %}</a> · <a href="{% url 'document-upload' %}">{% translate "Upload documents" %}</a></p>{% endif %}
+                {% if eligibility.failed %}<h3>{% translate "Criteria not met" %}</h3><ul>{% for item in eligibility.failed %}<li>{{ item }}</li>{% endfor %}</ul>{% endif %}
+            {% else %}<p>{% translate "Eligibility rules have not been configured for this scholarship." %}</p>{% endif %}
+        </section>
+        <section>
+            <h2>{% translate "Application" %}</h2>
+            {% if application %}
+                <p>{% translate "Your application is" %} <strong>{{ application.get_status_display }}</strong>.</p>
+                {% if application.review_note %}<p>{{ application.review_note }}</p>{% endif %}
+            {% elif eligibility and eligibility.status == 'ELIGIBLE' %}
+                <p>{% translate "Attached documents: your currently uploaded files." %} <a href="{% url 'document-upload' %}">{% translate "Manage documents" %}</a></p>
+                <form method="post">{% csrf_token %}<label for="applicant_note">{% translate "Note for the reviewer (optional)" %}</label><textarea id="applicant_note" name="applicant_note" maxlength="5000"></textarea><button type="submit">{% translate "Submit application" %}</button></form>
+            {% else %}<p>{% translate "Resolve the eligibility items before submitting an application." %}</p>{% endif %}
+        </section>
+    </div>
+</main>
+</body>
+</html>

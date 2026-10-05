@@ -1,0 +1,82 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% translate "Smart India Gov" %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #f5f9ff, #eef5f0);
+            color: #1d2b3a;
+        }
+        .container {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 40px 28px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(30,60,90,0.12);
+        }
+        h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 12px;
+        }
+        p {
+            font-size: 1.08rem;
+            line-height: 1.6;
+        }
+        .badge {
+            display: inline-block;
+            margin-bottom: 16px;
+            background: #dfeeff;
+            color: #114a9c;
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-size: 0.76rem;
+        }
+        .actions {
+            margin-top: 24px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .actions a {
+            text-decoration: none;
+            background: #0d6efd;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        .actions .secondary {
+            background: #e9ecef;
+            color: #1d2b3a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="badge">Smart India Gov</div>
+        <h1>{% translate "Scholarship and document support portal" %}</h1>
+        <p>{% translate "A secure place to organize student documents and discover scholarship opportunities." %}</p>
+        <p>{% translate "Your documents stay private and are reviewed by authorized staff." %}</p>
+
+        <div class="actions">
+            {% include "includes/language_selector.html" %}
+            {% if user.is_authenticated %}
+                <a href="{% url 'dashboard' %}">{% translate "Dashboard" %}</a>
+                <form method="post" action="{% url 'logout' %}">{% csrf_token %}<button type="submit">{% translate "Logout" %}</button></form>
+            {% else %}
+                <a href="{% url 'login' %}">{% translate "Login" %}</a>
+                <a class="secondary" href="{% url 'register' %}">{% translate "Create account" %}</a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

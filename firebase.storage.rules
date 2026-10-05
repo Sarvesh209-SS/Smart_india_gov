@@ -1,0 +1,11 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Documents are accessed only through the authenticated Django backend.
+    // The Admin SDK uses service-account IAM and bypasses these client rules.
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
